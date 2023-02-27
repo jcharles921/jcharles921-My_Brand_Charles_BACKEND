@@ -1,0 +1,31 @@
+# jcharles921-My_Brand_Charles_BACKEND
+#### Cloning the Project
+
+Go to the project repo on github and clone it to your local machine. Run the following scripts
+
+- `npm i` to install the project dependencies.
+- `touch .env` to create a dotenv file. Use the project .env.example to make sure all the environment variables are captured and used.
+####NODE 18.13.0
+#### Install the following packages
+-"dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.10.0"
+    }
+
+  -"devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+    }
+ 
+
+#### Running the server
+
+Run `npm run dev` to start the server locally;
+
+
+####
