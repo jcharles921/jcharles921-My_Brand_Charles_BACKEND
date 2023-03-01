@@ -1,9 +1,38 @@
-class Login {
+// import userModel from "../models/userModel.js"
+import allErr_Success from "../utils/allErr_Success.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import User from "../models/userModel.js";
 
+const loginController = async (req, res) => {
+    // email and password
+    const { email, password } = req.body;
+    try {
+      // find user with the email 
+      const user = await User.findOne({ email });
+  
+      // check if that user exists or not
+      if (!user) {
+        allErr_Success.loginFail(res);
+      } else {
+        // check password
+        //comment
+        console.log(password, user.password)
+        const comparedHashedPassword = await bcrypt.compare(password, User.password);
+        if (!comparedHashedPassword) {
 
+        allErr_Success.loginFail(res);
 
+        } else {
+          // create a sign in token
+          const token = jwt.sign({isAdmin: User.isAdmin}, process.env.SECRET, {expiresIn: '1h'})
+  
+        allErr_Success.loginSuccess(res, user, token);
+        }
+      }
+    } catch (error) {
+    allErr_Success.serverError(res, error.message);
+    }
+  };
 
-
-}
-
-export {Login} ;
+export default loginController;

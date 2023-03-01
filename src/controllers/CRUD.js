@@ -1,4 +1,5 @@
 import post from "../models/blogModel.js"
+import allErr_Success from "../utils/allErr_Success.js";
 
 
 class CRUD {
@@ -7,12 +8,11 @@ static async getAllPosts (req,res){
     console.log("all the posts are here");
     try{
         const allPosts = await post.find();
-        res.status(200).json({data:allPosts});
-
-        
+       
+        allErr_Success.successMsg(res, 200, "All posts", allPosts);    
     }
     catch{
-        res.status(404).json({message: error.message});
+        allErr_Success.failureMsg(res, 404, "No posts found");
     }
 
 }   
@@ -28,10 +28,12 @@ static async createPost(req,res){
     })
     try {
         await newPost.save();
-        res.status(201).json({data:newPost});
+        // res.status(201).json({data:newPost});
+        allErr_Success.successMsg(res, 201, "Post created", newPost);
     }
     catch (error) {
-        res.status(409).json({message: error.message});
+        // res.status(409).json({message: error.message});
+        allErr_Success.failureMsg(res, 409, "Post already exists");
     }
 
 
@@ -42,11 +44,11 @@ static async upddatePost(req,res){
     const {id} = req.params;
     try{
         const thepostToUpdate = await post.findByIdAndUpdate(id,{title,content,imageUrl}, {new: true});
-        res.status(200).json({data:thepostToUpdate});
+        allErr_Success.successMsg(res, 200, "Post updated", thepostToUpdate);
     }
     catch(error){
-        res.status(404).json({message: error.message});
-        console.log(error.message)
+        allErr_Success.failureMsg(res, 404, "Post not found");
+        
 
     }
 
@@ -57,10 +59,10 @@ static async deletePost(req,res){
     const {id} = req.params;
     try{
         await post.findByIdAndDelete(id);
-        res.status(200).json({message: "Post deleted successfully"});
+        allErr_Success.successMsg(res, 200, "Post deleted successfully", null);
     }
     catch(error){
-        res.status(404).json({message: error.message});
+        allErr_Success.failureMsg(res, 404, "Post not found");
 
     }
     
@@ -69,10 +71,10 @@ static async getPostById(req,res){
     const {id} = req.params;
     try{
         const thePost = await post.findById(id);
-        res.status(200).json({data:thePost});
+        allErr_Success.successMsg(res, 200, "Post found", thePost);
     }
     catch(error){
-        res.status(404).json({message: error.message});
+        allErr_Success.failureMsg(res, 404, "Post not found");
 
     }
     

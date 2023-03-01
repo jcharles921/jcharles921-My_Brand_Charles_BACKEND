@@ -8,7 +8,7 @@ import { Signup } from "../controllers/Signup.js";
 
 
 const router= express.Router();
-router.get("/", Signup )
+router.post("/", Signup.registerController)
 
 
 export default router;
