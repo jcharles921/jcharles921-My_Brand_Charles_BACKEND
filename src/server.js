@@ -18,13 +18,15 @@ dotenv.config();
 // create server instance
 const app= express();
 const port= process.env.PORT
+
 const host =process.env.HOST
 const mode= process.env.ENV
 mongoose.set('strictQuery', false);
 
 //morgans for logs
 
-if (process.env.ENV == "develpment") app.use(morgan())
+if (mode == "development") app.use(morgan("combined"))
+console.log(mode)
 
 
 // connection to instance. IF you are in mode Dev,use a development DB.IF you are doing Test,use a TESTING DB.IF you are in Production ,use a PRODUCTION DB.
