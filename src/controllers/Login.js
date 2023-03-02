@@ -16,16 +16,15 @@ const loginController = async (req, res) => {
         allErr_Success.loginFail(res);
       } else {
         // check password
-        //comment
-        console.log(password, user.password)
-        const comparedHashedPassword = await bcrypt.compare(password, User.password);
+       
+        const comparedHashedPassword = await bcrypt.compare(password, user.password);
         if (!comparedHashedPassword) {
 
         allErr_Success.loginFail(res);
 
         } else {
           // create a sign in token
-          const token = jwt.sign({isAdmin: User.isAdmin}, process.env.SECRET, {expiresIn: '1h'})
+          const token = jwt.sign({isAdmin: user.isAdmin}, process.env.SECRET, {expiresIn: '1h'})
   
         allErr_Success.loginSuccess(res, user, token);
         }
