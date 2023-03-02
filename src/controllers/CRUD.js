@@ -19,10 +19,11 @@ static async getAllPosts (req,res){
 
 static async createPost(req,res){
     console.log("post created");
-    const {title, content, imageUrl, createdAt} = req.body;
+    const {title, content, imageUrl,commentSection, createdAt} = req.body;
     const newPost = new post({
         title,
         content,
+        commentSection,
         imageUrl,
         createdAt
     })

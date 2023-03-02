@@ -13,7 +13,10 @@ const postSchema = new mongoose.Schema({
   imageUrl: {
     type: String,
     required: true,
-  }, 
+  },
+  commentSection:{
+    type:String,
+  },
   createdAt: {
     type: Date,
     default: Date.now
