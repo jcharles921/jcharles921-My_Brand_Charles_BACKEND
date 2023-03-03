@@ -11,7 +11,11 @@ const isProtected = (req, res, next) => {
         let splitedToken= token.split(" ")[1];
         // console.log(splitedToken);
         const decoded = jwt.verify(splitedToken, process.env.SECRET);
-        req.user = decoded;
+        if(!decoded.isAdmin){
+           return res.status(401).json({
+                message: "You are not authorized to access this route",
+                });
+        }
         next();
     }
     }
