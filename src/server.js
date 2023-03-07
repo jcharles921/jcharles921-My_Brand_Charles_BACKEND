@@ -8,9 +8,6 @@ import mongoose from "mongoose"
 // configure dotenv
 dotenv.config();
 // // IMPORTING ROUTES
-// import routeCRUD from "./routes/routeCRUD.js";
-// import routeLogin from "./routes/routeLogin.js";
-// import routeSignup from "./routes/routeSignup.js"
  import allRoutes from "./routes/allRoutes.js"
 
 

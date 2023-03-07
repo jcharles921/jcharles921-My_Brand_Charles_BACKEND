@@ -5,15 +5,21 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
+    
   }, 
   content: {
     type: String,
     required: true,
+    unique:true
+    
   }, 
   imageUrl: {
     type: String,
     required: true,
-  }, 
+  },
+  commentSection:{
+    type:String,
+  },
   createdAt: {
     type: Date,
     default: Date.now
