@@ -1,7 +1,12 @@
 import  jwt  from "jsonwebtoken";
+import getCookie from "../utils/cookies.js";
+
+
 
 const isProtected = (req, res, next) => {
-    const token = req.headers.authorization;
+       // Get the token from the request
+       const token = getCookie(req);
+   
     if (!token) {
         res.status(401).json({
         message: "You are not authorized to access this route",
@@ -10,7 +15,7 @@ const isProtected = (req, res, next) => {
         // console.log(token + "\n");
         let splitedToken= token.split(" ")[1];
         // console.log(splitedToken);
-        const decoded = jwt.verify(splitedToken, process.env.SECRET);
+        const decoded = jwt.verify(token, process.env.SECRET);
         if(!decoded.isAdmin){
            return res.status(401).json({
                 message: "You are not authorized to access this route",
