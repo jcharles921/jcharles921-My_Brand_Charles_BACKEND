@@ -5,7 +5,7 @@ Go to the project repo on github and clone it to your local machine. Run the fol
 
 - `npm i` to install the project dependencies.
 - `touch .env` to create a dotenv file. Use the project .env.example to make sure all the environment variables are captured and used.
-####NODE 18.13.0
+#NODE 18.13.0
 #### Install the following packages
 -"dependencies": {
     "bcrypt": "^5.1.0",
@@ -28,4 +28,38 @@ Go to the project repo on github and clone it to your local machine. Run the fol
 Run `npm run dev` to start the server locally;
 
 
-####
+### API ENDPOINTS
+
+#### Users
+
+| HTTP Request | Endpoint               | Description                       |
+| :----------- | :--------------------- | :-------------------------------- |
+| `POST`       | `/api/v1/Signup`     | AllUsers signUp        |
+| `POST`       | `/api/v1/Login`    | Allusers Signin   |
+
+#### Article
+
+| HTTP Request | Endpoint                 | Description                         |
+| :----------- | :----------------------- | :---------------------------------- |
+| `GET`        | `/api/v1/CRUD`          | Used to get all the Blogs articles available |
+| `POST`       | `/api/v1/CRUD`          | Used to create a new article blog             |
+| `GET`        | `/api/v1/CRUD/id` | Used to get a single article blog           |
+| `PUT`        | `/api/v1/CRUD/id` | Used to update a blog article             |
+| `DELETE`     | `/api/v1/CRUD/id` | Used to delete a blog  article             |
+
+#### Comment
+
+| HTTP Request | Endpoint               | Description                       |
+| :----------- | :--------------------- | :-------------------------------- |
+| `PATCH`       | `/api/v1/comment/articleId`     | Used to put a comment on article        |
+
+
+#### Message
+
+| HTTP Request | Endpoint                       | Description                       |
+| :----------- | :----------------------------- | :-------------------------------- |
+| `GET`        | `/api/v1/queries`             | Used to get all the messages sent |
+| `POST`       | `/api/v1/queries`             | Used to send message        |
+| `GET`        | `/api/v1/queries` | Used to get a single blog         |
+| `DELETE`     | `/api/v1/queries` | Used to delete a message          |
+
