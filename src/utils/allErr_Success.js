@@ -17,16 +17,20 @@ class allErr_Success{
   };
   static async loginFail(res){
     res.status(401).json({
-      message: "Invalid Credentials"
+      message: "Invalid Credentials",
+      status:(401)
     });
   }
   static async loginSuccess(res, user, token){
     res.status(200).json({
       data: {
+        isAdmin: user.isAdmin,
         email: user.email,
-        isAdmin: user.isAdmin
+        
+        name: user.name
       },
       token: token,
+      status:200
     })
   }
   static async signupSuccess(res, user){
@@ -34,13 +38,15 @@ class allErr_Success{
       message: "New User successfully created",
       // data: user
       email: user.email,
-      isAdmin: user.isAdmin
+      isAdmin: user.isAdmin,
+      status:201
     });
   }
   static async signupFail(error,res){
    if(error.code ===11000){
       res.status(403).json({
-        message: "Email already exists"
+        message: "Email already exists",
+        status:403
       });
    }
    else{

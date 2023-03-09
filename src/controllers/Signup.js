@@ -5,12 +5,12 @@ import bcrypt from "bcrypt";
 
 class Signup {
     static async registerController(req, res){
-        const { email, password/*confirmPass*/ } = req.body;
+        const { name, email, password,/*confirmPass*/ } = req.body;
         try {
           const alluser= await User.find();
           if(alluser == ""){
             const hashedPassword = await bcrypt.hash(password, 10);
-            const newUser = await User.create({ email, password: hashedPassword, isAdmin:true, /*confirmPass*/});
+            const newUser = await User.create({name,email, password: hashedPassword, isAdmin:true});
               allErr_Success.signupSuccess(res, newUser);
           }
           else{
