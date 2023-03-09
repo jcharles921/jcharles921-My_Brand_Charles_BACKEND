@@ -63,3 +63,4 @@ Run `npm run dev` to start the server locally;
 | `GET`        | `/api/v1/queries` | Used to get a single blog         |
 | `DELETE`     | `/api/v1/queries` | Used to delete a message          |
 
+  
