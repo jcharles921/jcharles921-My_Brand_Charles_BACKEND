@@ -2,10 +2,10 @@
   "name": "my_brand_charles_backend",
   "version": "1.0.0",
   "description": "Its the API of my portfolio",
-  "main": "./src/server.js",
+  "main": "/src/server.js",
   "type": "module",
   "scripts": {
-    "start":"node /src/app.js"
+    "start":"node /src/app.js",
     "test": "better-npm-run test",
     "dev": "better-npm-run dev",
     "prod": "echo \"Error: no test specified\" && exit 1"
