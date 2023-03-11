@@ -5,11 +5,12 @@ import getCookie from "../utils/cookies.js";
 
 const isProtected = (req, res, next) => {
        // Get the token from the request
-       const token = getCookie(req);
+       let token =  req.headers.authorized;
+     
    
     if (!token) {
         res.status(401).json({
-        message: "You are not authorized to access this route",
+        message: "no token Provided",
         });
     } else {
         // console.log(token + "\n");

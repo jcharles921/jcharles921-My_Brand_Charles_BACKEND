@@ -2,7 +2,7 @@
   "name": "my_brand_charles_backend",
   "version": "1.0.0",
   "description": "Its the API of my portfolio",
-  "main": "/src/server.js",
+  "main": "./src/server.js",
   "type": "module",
   "scripts": {
     "start":"better-npm-run prod",

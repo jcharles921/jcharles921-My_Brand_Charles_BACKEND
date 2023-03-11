@@ -1,7 +1,7 @@
 const getCookie = (req) => {
 
     // Check existence of the cookie and return it
-    let cookie = req.headers.cookie ? req.headers.cookie.split('=')[1] : null;
+    let cookie = req.headers.authorized ? req.headers.authorized.split('=')[1] : null;
     return cookie;
 
 }
