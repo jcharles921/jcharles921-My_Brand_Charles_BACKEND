@@ -25,7 +25,7 @@ const loginController = async (req, res) => {
         } else {
           // create a sign in token
           const token = jwt.sign({isAdmin: user.isAdmin}, process.env.SECRET, {expiresIn: '1h'})
-          res.cookie("Authorized", token, {
+          res.cookie("authorized", token, {
             httpOnly: true,
             maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
         });

@@ -5,7 +5,7 @@
   "main": "./src/server.js",
   "type": "module",
   "scripts": {
-    "start":"better-npm-run prod",
+    "start":"better-npm-run dev",
     "test": "better-npm-run test",
     "dev": "better-npm-run dev",
     "prod": "echo \"Error: no test specified\" && exit 1"

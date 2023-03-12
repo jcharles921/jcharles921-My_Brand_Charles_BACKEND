@@ -6,6 +6,7 @@ import getCookie from "../utils/cookies.js";
 const isProtected = (req, res, next) => {
        // Get the token from the request
        let token =  req.headers.authorized;
+       console.log(req.headers)
      
    
     if (!token) {
@@ -14,7 +15,7 @@ const isProtected = (req, res, next) => {
         });
     } else {
         // console.log(token + "\n");
-        let splitedToken= token.split(" ")[1];
+        let splitedToken= token.split("=")[1];
         // console.log(splitedToken);
         const decoded = jwt.verify(token, process.env.SECRET);
         if(!decoded.isAdmin){
