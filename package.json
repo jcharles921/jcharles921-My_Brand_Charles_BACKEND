@@ -12,7 +12,7 @@
   },
   "betterScripts": {
     "dev": {
-      "command": "nodemon ./src/app.js",
+      "command": "nodemon ./src/server.js",
       "env": {
         "ENV": "development",
         "PORT": 5000
@@ -26,7 +26,7 @@
       }
     },
     "prod": {
-      "command": "node ./src/app.js",
+      "command": "node ./src/server.js",
       "env": {
         "ENV": "production"
       }
