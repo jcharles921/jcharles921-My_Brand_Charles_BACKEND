@@ -7,10 +7,7 @@ var validateEmail = function(email) {
 // const {password, confirmPass} =req.body;
 
 const userSchema = new mongoose.Schema({
-  name:{
-    type:String,
-    
-  },
+ 
   email: {
     type: String,
     trim: true,
@@ -31,6 +28,11 @@ const userSchema = new mongoose.Schema({
     //   },
     //   message: 'Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character, and be at least 6 characters long'
     // }
+  },
+  username:{
+    type:String,
+    required: "username is required",
+    
   },
   // confirmPass:{
   //   type: String,

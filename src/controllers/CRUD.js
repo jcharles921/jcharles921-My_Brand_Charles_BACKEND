@@ -87,6 +87,23 @@ static async getPostById(req,res){
     }
     
 }
+// static async commentController(req,res){
+//     try {
+        
+//     } catch (error) {
+        
+//     }
+
+// }
+// static async likeController(req,res){
+//     try {
+        
+//     } catch (error) {
+        
+//     }
+
+// }
+
 
 }
 
