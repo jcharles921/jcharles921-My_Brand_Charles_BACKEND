@@ -6,7 +6,7 @@ import getCookie from "../utils/cookies.js";
 const isProtected = (req, res, next) => {
        // Get the token from the request
        let token =  req.headers.authorized;
-       console.log(req.headers)
+    //    console.log(req.headers)
      
    
     if (!token) {
