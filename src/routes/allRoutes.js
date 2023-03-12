@@ -10,7 +10,7 @@ router.use("/CRUD", routeCRUD);
 router.use("/Login", routeLogin);
 router.use("/Signup", routeSignup);
 router.use("/queries",routeQueries);
-router.use("/comments", routerComment);
+// router.use("/comments", routerComment);
 
 
 

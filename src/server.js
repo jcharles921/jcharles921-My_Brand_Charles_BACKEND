@@ -53,6 +53,7 @@ try {
 
     app.use(cors())
     app.use(bodyParser.json({limit:'50mb', type:'application/json'}))
+    app.use(bodyParser.urlencoded({ extended: true }));
     //app routes
     app.use("/api/v1/", allRoutes );
 

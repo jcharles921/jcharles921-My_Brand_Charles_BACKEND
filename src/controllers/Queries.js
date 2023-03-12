@@ -13,11 +13,12 @@ class Queries {
         }
     }
     static async createQuery(req, res){
-        const {name, email, message} = req.body;
+        const {name, email, message,createdAt } = req.body;
         const newQuery = new query({
             name,
             email,
-            message
+            message,
+            createdAt
         })
         try {
             await newQuery.save();
@@ -27,7 +28,7 @@ class Queries {
             console.log(error);
             // allErr_Success.failureMsg(res, 409, "Query already exists");
             res.status(500).json({
-                message: errorMsg,
+                message: error.message,
                 Code: error
               });
         }

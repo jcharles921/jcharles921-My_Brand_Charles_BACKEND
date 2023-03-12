@@ -5,7 +5,7 @@
   "main": "./src/server.js",
   "type": "module",
   "scripts": {
-    "start":"better-npm-run dev",
+    "start":"better-npm-run prod",
     "test": "better-npm-run test",
     "dev": "better-npm-run dev",
     "prod": "echo \"Error: no test specified\" && exit 1"
@@ -58,10 +58,11 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.10.0",
     "supertest": "^6.3.3",
+    "morgan": "^1.10.0",
     "ts-jest": "^29.0.5"
   },
   "devDependencies": {
-    "morgan": "^1.10.0",
+    
     "nodemon": "^2.0.20"
   }
 }

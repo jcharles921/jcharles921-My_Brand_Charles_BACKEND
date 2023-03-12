@@ -1,6 +1,8 @@
 import express from "express";
 import { CRUD } from "../controllers/CRUD.js";
 import isProtected from "../middleware/isProtected.js";
+import Comment from "../controllers/comment.js";
+import comment from "../models/commentModel.js";
 
 
 
@@ -10,6 +12,8 @@ router.get("/",  CRUD.getAllPosts );
 router.patch("/:id",isProtected, CRUD.upddatePost);
 router.delete("/:id",isProtected, CRUD.deletePost);
 router.get("/:id", CRUD.getPostById);
+router.post('/:id/comments',Comment.createComment)
+router.post('/:id/like',Comment.getAllComments)
 
 
 export default router;
