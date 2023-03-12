@@ -12,8 +12,8 @@ router.get("/",  CRUD.getAllPosts );
 router.patch("/:id",isProtected, CRUD.upddatePost);
 router.delete("/:id",isProtected, CRUD.deletePost);
 router.get("/:id", CRUD.getPostById);
-router.post('/:id/comments',Comment.createComment)
-router.post('/:id/like',Comment.getAllComments)
+router.put('/:id/comments',Comment.createComment)
+router.put('/:id/like',Comment.getAllComments)
 
 
 export default router;

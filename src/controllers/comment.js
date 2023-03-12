@@ -1,25 +1,26 @@
 import comment from '../models/commentModel.js';
 import allErr_Success from '../utils/allErr_Success.js';
+import post from '../models/blogModel.js';
 
 
 
 class Comment{
     static async createComment(req, res){
-        const {name, email, message} = req.body;
-        const newComment = new comment({
-            name,
-            email,
-            message
-        })
+
+        const {username, email, message, _id} = req.body;
+
         try {
-            await newComment.save();
-            allErr_Success.successMsg(res, 201, "Comment created", newComment);
+            // await newComment.save();
+            const Post = await post.findById(_id);
+            Post.commentSection.push({username, email, message});
+            await Post.save();
+            allErr_Success.successMsg(res, 201, "Comment created");
         }
         catch (error) {
             console.log(error);
             // allErr_Success.failureMsg(res, 409, "Query already exists");
             res.status(500).json({
-                message: errorMsg,
+                message: error.message,
                 Code: error
               });
         }

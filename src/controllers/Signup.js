@@ -15,7 +15,7 @@ class Signup {
           }
           else{
             const hashedPassword = await bcrypt.hash(password, 10);
-            const newUser = await User.create({ email, password: hashedPassword, isAdmin:false, /*confirmPass*/});
+            const newUser = await User.create({username, email, password: hashedPassword, isAdmin:false, /*confirmPass*/});
               allErr_Success.signupSuccess(res, newUser);
 
           }
