@@ -24,7 +24,23 @@ class Signup {
           console.log(error.code);
             allErr_Success.signupFail(error, res);
         }
+
       };
+      static async getAlluser(req,res){
+         try{
+          const alluser= await User.find();
+        allErr_Success.successMsg(res, 200, "All users", alluser);  
+
+         }
+         catch(error){
+          res.status(500).json({
+            message: error.message
+          });
+
+         }  
+
+        
+      }
       
 
 

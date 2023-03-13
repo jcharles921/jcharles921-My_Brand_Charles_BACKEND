@@ -1,4 +1,4 @@
-import comment from '../models/commentModel.js';
+// import comment from '../models/commentModel.js';
 import allErr_Success from '../utils/allErr_Success.js';
 import post from '../models/blogModel.js';
 
@@ -6,13 +6,16 @@ import post from '../models/blogModel.js';
 
 class Comment{
     static async createComment(req, res){
+        const {id}= req.params
 
-        const {username, email, message, _id} = req.body;
+        const {username, message} = req.body;
 
         try {
-            // await newComment.save();
-            const Post = await post.findById(_id);
-            Post.commentSection.push({username, email, message});
+            // await newComment.save()
+
+            const Post = await post.findById(id);
+    
+            Post.commentSection.push({username, message});
             await Post.save();
             allErr_Success.successMsg(res, 201, "Comment created");
         }
@@ -25,13 +28,24 @@ class Comment{
               });
         }
     }
-    static async getAllComments(req, res){
+    static async like(req, res){
+        const {id}= req.params
+        const {email}= req.body;
         try{
-            const allComments = await comment.find();
-            allErr_Success.successMsg(res, 200, "All comments", allComments);
+            console.log(id);
+            const theLike = await post.findById(id);
+            // console.log(theLike);
+            console.log(theLike.like);
+            theLike.like.push(email);
+
+            await theLike.save();
+
+            allErr_Success.successMsg(res, 200, "The like", theLike);
         }
-        catch{
-            allErr_Success.failureMsg(res, 404, "No comments found");
+        catch(error){
+            console.log(error.message)
+            allErr_Success.failureMsg(res, 404, error.message);
+            // allErr_Success.failureMsg(res, 404, "No likes found");
         }
     }
 }
