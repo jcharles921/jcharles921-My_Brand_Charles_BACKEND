@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
   },
   username:{
     type:String,
-    required: "username is required",
+    // required: "username is required",
     
   },
   // confirmPass:{

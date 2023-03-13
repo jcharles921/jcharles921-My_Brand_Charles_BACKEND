@@ -27,7 +27,7 @@ class allErr_Success{
         isAdmin: user.isAdmin,
         email: user.email,
         
-        name: user.name
+        name: user.username
       },
       token: token,
       status:200
