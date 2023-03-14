@@ -29,7 +29,7 @@
       "command": "node ./src/server.js",
       "env": {
         "ENV": "production",
-        "PORT": 5005
+        "PORT": 5000
       }
     }
   },
