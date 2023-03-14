@@ -51,7 +51,7 @@ try {
 
 
 
-    app.use(cors())
+    app.use(cors({origin: '*'}))
     app.use(bodyParser.json({limit:'50mb', type:'application/json'}))
     app.use(bodyParser.urlencoded({ extended: true }));
     //app routes
