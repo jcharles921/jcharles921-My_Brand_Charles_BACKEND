@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const commentSchema = new mongoose.Schema({
-  name: {
+  username: {
     type: String,
-    required: true,
+    // required: true,
     lowercase: true
   },
   email:{
@@ -12,7 +12,7 @@ const commentSchema = new mongoose.Schema({
   },
   message: {
     type: String, 
-    required: true,
+    // required: true,
    
   }, 
   createdAt: {

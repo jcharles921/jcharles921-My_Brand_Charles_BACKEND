@@ -76,7 +76,8 @@ try {
 // })
 
 
-// app.get("/",(req,res)=>{
+app.get("/",(req,res)=>{
 
-//     res.status(200).send(`<h1> WELCOME TO MY BACKEND SERVER page</h1>`)
-// })
+    res.status(200).send(`<h1> WELCOME TO MY BACKEND SERVER page</h1>`)
+})
+

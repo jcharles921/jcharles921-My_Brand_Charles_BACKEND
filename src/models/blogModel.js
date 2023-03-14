@@ -17,9 +17,18 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  commentSection:{
-    type:String,
-  },
+  commentSection:[{
+    username: { type: String },
+    message: {type:String},
+    createdAt:{
+        type:Date,
+        default:Date.now()
+    }
+
+  }],
+    like:[{
+      email: {type: String}
+  }],
   createdAt: {
     type: Date,
     default: Date.now

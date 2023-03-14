@@ -29,6 +29,14 @@ const loginController = async (req, res) => {
             httpOnly: true,
             maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
         });
+        const tokenUser= jwt.sign({realUser:true},process.env.SECRET,{expiresIn:'1h'} )
+        
+        res.cookie('authorization',tokenUser,{
+          httpOnly: true,
+          maxAge: 1000 * 60 // 1h
+          
+        })
+        // allErr_Success.loginSuccess(res, user, token);
 
   
         allErr_Success.loginSuccess(res, user, token);

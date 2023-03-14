@@ -8,7 +8,7 @@
     "start":"better-npm-run prod",
     "test": "better-npm-run test",
     "dev": "better-npm-run dev",
-    "prod": "echo \"Error: no test specified\" && exit 1"
+    "prod": "better-npm-run prod"
   },
   "betterScripts": {
     "dev": {
@@ -22,13 +22,14 @@
       "command": "nodemon ./src/app.js",
       "env": {
         "ENV": "test",
-        "PORT": 3000
+        "PORT": 4005
       }
     },
     "prod": {
       "command": "node ./src/server.js",
       "env": {
-        "ENV": "production"
+        "ENV": "production",
+        "PORT": 5000
       }
     }
   },
