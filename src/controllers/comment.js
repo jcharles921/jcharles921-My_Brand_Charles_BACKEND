@@ -35,14 +35,28 @@ class Comment{
             console.log(id);
             const theLike = await post.findById(id);
             // console.log(theLike);
-            console.log(theLike.like);
-            theLike.like.push(email);
+            function removeElementFromArray(array, element) {
+                const index = array.indexOf(element);
+                if (index > -1) {
+                  array.splice(index, 1);
+                }
+              }
+            if(theLike.like.includes({email})){
+                removeElementFromArray(theLike.like, email);
+            }
+            else{
+                theLike.like.push({email});
+            }
+
+            // if(theLike.like)
+            // theLike.like.push({email});
 
             await theLike.save();
 
-            allErr_Success.successMsg(res, 200, "The like", theLike);
+            allErr_Success.successMsg(res, 200, "The like", theLike.like);
         }
         catch(error){
+            // console.log(error)
             console.log(error.message)
             allErr_Success.failureMsg(res, 404, error.message);
             // allErr_Success.failureMsg(res, 404, "No likes found");
