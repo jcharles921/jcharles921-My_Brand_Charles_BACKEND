@@ -30,19 +30,19 @@ class Comment{
     }
     static async like(req, res){
         const {id}= req.params
-        const {email}= req.body;
+        // const {email}= req.body;
         try{
             console.log(id);
             const theLike = await post.findById(id);
-            // console.log(theLike);
-            console.log(theLike.like);
-            theLike.like.push(email);
+            theLike.like += 1;
+         
 
             await theLike.save();
 
-            allErr_Success.successMsg(res, 200, "The like", theLike);
+            allErr_Success.successMsg(res, 200, "The like", theLike.like);
         }
         catch(error){
+            // console.log(error)
             console.log(error.message)
             allErr_Success.failureMsg(res, 404, error.message);
             // allErr_Success.failureMsg(res, 404, "No likes found");

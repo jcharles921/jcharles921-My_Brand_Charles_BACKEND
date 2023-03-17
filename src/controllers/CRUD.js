@@ -33,8 +33,8 @@ static async createPost(req,res){
         allErr_Success.successMsg(res, 201, "Post created", newPost);
     }
     catch (error) {
-        // res.status(409).json({message: error.message});
-        allErr_Success.failureMsg(res, 409, "Post already exists");
+        res.status(409).json({message: error.message});
+        // allErr_Success.failureMsg(res, 409, "Post already exists");
     }
 
 
@@ -48,6 +48,7 @@ static async upddatePost(req,res){
         allErr_Success.successMsg(res, 200, "Post updated", thepostToUpdate);
     }
     catch(error){
+        console.log(error.message)
         allErr_Success.failureMsg(res, 404, "Post not found");
         
 
