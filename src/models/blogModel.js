@@ -26,9 +26,7 @@ const postSchema = new mongoose.Schema({
     }
 
   }],
-    like:[{
-      email: {type: String}
-  }],
+    like:{ type: Number, default: 0 },
   createdAt: {
     type: Date,
     default: Date.now

@@ -44,7 +44,8 @@ try {
       mongoose
         .connect(process.env.TEST_DB, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((result) => {
-          console.log("MONGODB \nTEST DB Connected");
+          // console.log("MONGODB \nTEST DB Connected");
+          app.use("/api/v1/", allRoutes2 );
         });
     } else if (mode === "production") {
       mongoose
@@ -85,3 +86,4 @@ app.get("/",(req,res)=>{
     res.status(200).send(`<h1> WELCOME TO MY BACKEND SERVER page</h1>`)
 })
 
+export default app;

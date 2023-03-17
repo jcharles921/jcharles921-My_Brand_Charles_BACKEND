@@ -48,6 +48,7 @@ static async upddatePost(req,res){
         allErr_Success.successMsg(res, 200, "Post updated", thepostToUpdate);
     }
     catch(error){
+        console.log(error.message)
         allErr_Success.failureMsg(res, 404, "Post not found");
         
 

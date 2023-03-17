@@ -30,26 +30,12 @@ class Comment{
     }
     static async like(req, res){
         const {id}= req.params
-        const {email}= req.body;
+        // const {email}= req.body;
         try{
             console.log(id);
             const theLike = await post.findById(id);
-            // console.log(theLike);
-            function removeElementFromArray(array, element) {
-                const index = array.indexOf(element);
-                if (index > -1) {
-                  array.splice(index, 1);
-                }
-              }
-            if(theLike.like.includes({email})){
-                removeElementFromArray(theLike.like, email);
-            }
-            else{
-                theLike.like.push({email});
-            }
-
-            // if(theLike.like)
-            // theLike.like.push({email});
+            theLike.like += 1;
+         
 
             await theLike.save();
 
