@@ -7,7 +7,7 @@ Go to the project repo on github and clone it to your local machine. Run the fol
 
 - `npm i` to install the project dependencies.
 - `touch .env` to create a dotenv file. Use the project .env.example to make sure all the environment variables are captured and used.
-#NODE 18.13.0
+# NODE 18.13.0
 #### Install the following packages
 ## dependencies
 - "bcrypt": "^5.1.0",
