@@ -1,4 +1,6 @@
 [![Deploy to Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
+[![Build Status](https://img.shields.io/github/workflow/status/jcharles921/jcharles921-My_Brand_Charles_BACKEND/node.js?label=node.js)](https://github.com/jcharles921/jcharles921-My_Brand_Charles_BACKEND/actions/workflows/node.js.yml)
+
 
 # jcharles921-My_Brand_Charles_BACKEND
 #### Cloning the Project
