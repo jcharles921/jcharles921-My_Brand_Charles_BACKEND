@@ -32,7 +32,7 @@ jobs:
       run: npm run test
       env:
         CI: true
-        TEST_DB: ${{ secrets.DEVELOPMENT_DB }}
+        TEST_DB: ${{ secrets.TEST_DB }}
         SECRET: ${{ secrets.SECRET }}
 
 

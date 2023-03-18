@@ -15,6 +15,24 @@ function generateRandomString(length) {
     }
     return result;
   }
+  async function theOneToDelete (){
+    const newPost = {
+        title:generateRandomString(8),
+        content:generateRandomString(20),
+        commentSection:[],
+        imageUrl:generateRandomString(10),
+        createdAt: Date.now
+    }
+    const res = await request(app)
+    .post('/api/v1/CRUD')
+    .send(newPost)
+    // .get('/api/v1/CRUD/6410ebed78d262b366c0fc4b ')
+    // expect(res.statusCode).toEqual(200);
+    // expect(res.body).toHaveProperty('data');
+    // expect(res.body.message).toEqual('Post found')
+    return res.body.data._id
+    
+} 
 
 beforeAll( async () => {
 //   server = app.listen(done);
@@ -90,6 +108,7 @@ describe('Updating a post',()=>{
         }
         
         let theId = await theOneToUpdate()
+        console.log(theId)
         
         setTimeout(async()=>{
             const res = await request(app)
@@ -116,35 +135,18 @@ describe('Updating a post',()=>{
 )
 describe('Deleting a post',()=>{
     it('should delete a post', async ()=>{
-        async function theOneToDelete (){
-            const newPost = {
-                title:generateRandomString(8),
-                content:generateRandomString(20),
-                commentSection:[],
-                imageUrl:generateRandomString(10),
-                createdAt: Date.now
-            }
-            const res = await request(app)
-            .post('/api/v1/CRUD')
-            .send(newPost)
-            // .get('/api/v1/CRUD/6410ebed78d262b366c0fc4b ')
-            // expect(res.statusCode).toEqual(200);
-            // expect(res.body).toHaveProperty('data');
-            // expect(res.body.message).toEqual('Post found')
-            return res.body._id
-            
-        } 
+
         
         let deleteId=  await theOneToDelete()
-        // console.log(deleteId)
+        console.log(deleteId)
 
-       setTimeout( async() => {
+       
         const res = await request(app)
          .delete(`/api/v1/CRUD/${deleteId}.`)
          expect(res.statusCode).toEqual(200);
         expect(res.body).toHaveProperty('data');
         expect(res.body.message).toEqual('Post deleted')
-        },1000)
+        
         
     })
 }
