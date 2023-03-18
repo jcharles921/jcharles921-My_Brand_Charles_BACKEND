@@ -5,8 +5,8 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
+    branches: [ "**" ]
+  pull_request: 
     branches: [ "main" ]
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -31,6 +31,7 @@ jobs:
     - name: Testing
       run: npm run test
       env:
+        CI: true
         TEST_DB: ${{ secrets.DEVELOPMENT_DB }}
         SECRET: ${{ secrets.SECRET }}
 
