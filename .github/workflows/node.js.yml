@@ -36,12 +36,4 @@ jobs:
         SECRET: ${{ secrets.SECRET }}
 
 
- status-badge:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: shieldsio/github-action@v5.x
-        with:
-          status: ${{ job.status }}
-          label: build
-          color: ${{ job.status == 'success' && 'green' || 'red' }}
+ 
