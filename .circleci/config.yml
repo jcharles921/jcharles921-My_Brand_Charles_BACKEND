@@ -13,6 +13,7 @@ jobs:
       - restore_cache:
           keys:
             - dependency-cache-{{ checksum "package-lock.json" }}
+        
       - run: npm ci
       - run: npm run build --if-present
       - save_cache:
@@ -20,6 +21,10 @@ jobs:
           paths:
             - node_modules
       - run: npm test
+      - run:
+    name: Load environment variables
+    command: |
+      source .env
 
 workflows:
   version: 2
