@@ -38,7 +38,7 @@ try {
         .then((result) => {
           console.log("MONGODB \nDEV DB Connected");
         });
-        app.use("/api/v1/", allRoutes2 );
+        app.use("/api/v1/", allRoutes );
 
     } else if (mode === "test") {
       mongoose

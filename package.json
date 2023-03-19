@@ -61,6 +61,8 @@
     "mongoose": "^6.10.0",
     "morgan": "^1.10.0",
     "supertest": "^6.3.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2",
     "ts-jest": "^29.0.5"
   },
   "devDependencies": {

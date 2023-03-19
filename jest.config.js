@@ -10,7 +10,7 @@
 // };
 export default {
     testEnvironment: 'node',
-    testMatch: ["<rootDir>/test/*.test.js"],
+    testMatch: ["<rootDir>/src/__tests__/*.test.js"],
     verbose: true,
     forceExit: true,
     transform: {
