@@ -8,6 +8,7 @@ jobs:
       CI: true
       TEST_DB: $TEST_DB
       SECRET: $SECRET
+      
     steps:
       - checkout
       - restore_cache:
