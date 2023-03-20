@@ -1,6 +1,9 @@
 [![Deploy to Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
 
 ![Test pass](https://github.com/jcharles921/jcharles921-My_Brand_Charles_BACKEND/actions/workflows/node.js.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND/badge.svg?branch=main)](https://coveralls.io/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND?branch=main)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/11426be371884ef60a2d/maintainability)](https://codeclimate.com/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND/maintainability)
 
 
 # jcharles921-My_Brand_Charles_BACKEND
