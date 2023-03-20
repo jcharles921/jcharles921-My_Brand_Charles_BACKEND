@@ -28,7 +28,7 @@ jobs:
       run: |
         npm install -g nyc
         npm test -- --coverage
-        nyc report --reporter=lcov
+        nyc report --reporter=lcov --all
         cat ./coverage/lcov.info | coveralls
       env:
         CI: true
