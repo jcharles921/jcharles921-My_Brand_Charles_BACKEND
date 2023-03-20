@@ -1,6 +1,6 @@
 [![Deploy to Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
-![Test pass](https://github.com/jcharles921/jcharles921-My_Brand_Charles_BACKEND
-/actions/workflows/node.js.yml/badge.svg?event=push)
+
+![Test pass](https://github.com/jcharles921/jcharles921-My_Brand_Charles_BACKEND/actions/workflows/node.js.yml/badge.svg)
 
 
 # jcharles921-My_Brand_Charles_BACKEND
