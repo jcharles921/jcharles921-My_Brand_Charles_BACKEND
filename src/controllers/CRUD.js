@@ -64,10 +64,14 @@ static async deletePost(req,res){
 
         const _id=req.params.id;
         const deleted_post= await post.findByIdAndDelete(_id);
-        console.log(deleted_post);
+        // console.log(deleted_post);
        if(deleted_post){
-        allErr_Success.successMsg(res, 200, "Post deleted", deleted_post);
-       };
+        return allErr_Success.successMsg(res, 200, "Post deleted", deleted_post);
+       }
+       else{
+       return allErr_Success.failureMsg(res, 404, "Post not found");
+
+       }
     }
     catch(error){
         console.log(error)

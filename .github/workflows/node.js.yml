@@ -32,5 +32,3 @@ jobs:
         CI: true
         TEST_DB: ${{ secrets.TEST_DB }}
         SECRET: ${{ secrets.SECRET }}
-
-
