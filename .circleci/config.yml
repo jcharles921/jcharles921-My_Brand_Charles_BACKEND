@@ -12,6 +12,10 @@ jobs:
         - image: circleci/node:15
 
     steps:
+      - checkout
+      - run:
+          command: npm ci
+          name: Install Packages  
       - run:
           name: 'INSTALLING DEPENDENCY'
           command: npm install
