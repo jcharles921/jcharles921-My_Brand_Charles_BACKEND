@@ -18,7 +18,6 @@ jobs:
           environment: 
             TEST_DB: $TEST_DB
             ENV: $ENV
-      - checkout
       - run: npm run test
 
 workflows:
