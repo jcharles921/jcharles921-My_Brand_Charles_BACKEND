@@ -18,7 +18,7 @@ jobs:
           environment: 
             TEST_DB: $TEST_DB
             ENV: $ENV
-      - run: npm run test
+      - run: npm run test 
 
 workflows:
   say-hello-workflow:
