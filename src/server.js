@@ -44,7 +44,7 @@ try {
       mongoose
         .connect(process.env.TEST_DB, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((result) => {
-          // console.log("MONGODB \nTEST DB Connected");
+          console.log("MONGODB \nTEST DB Connected");
           app.use("/api/v1/", allRoutes2 );
         });
     } else if (mode === "production") {

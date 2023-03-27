@@ -24,7 +24,7 @@
       "command": " jest --maxWorker=1 --coverage ",
       "env": {
         "ENV": "test",
-        "PORT": 5001
+        "PORT": 5000
       }
     },
     "prod": {
