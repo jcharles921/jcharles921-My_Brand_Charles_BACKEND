@@ -24,8 +24,10 @@ jobs:
           environment: 
             TEST_DB: $TEST_DB
             ENV: $ENV
+            Coverall_token: $Coverall_token
       - run: npm run test
-      - run : npx coveralls < coverage/lcov.info - coveralls/upload
+      - run : npx coveralls < coverage/lcov.info 
+     
 
 workflows:
   Doing_test:
