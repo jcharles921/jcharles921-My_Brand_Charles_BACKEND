@@ -9,6 +9,8 @@
 //     // setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
 // };
 export default {
+  collectCoverage: true,
+  coverageReporters: ["lcov"],
     testEnvironment: 'node',
     testMatch: ["<rootDir>/src/__tests__/*.test.js"],
     verbose: true,
@@ -18,4 +20,5 @@ export default {
       "^.+\\.tsx?$": ["@swc/jest"],
       "^.+\\.js?$": ["@swc/jest"],
     },
+
   };
