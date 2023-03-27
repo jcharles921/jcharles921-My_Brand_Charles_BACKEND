@@ -1,5 +1,8 @@
 [![Deploy to Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
 
+
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
+
 ![Test pass](https://github.com/jcharles921/jcharles921-My_Brand_Charles_BACKEND/actions/workflows/node.js.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND/badge.svg?branch=main)](https://coveralls.io/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND?branch=main)
 
