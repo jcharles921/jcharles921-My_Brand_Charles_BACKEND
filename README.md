@@ -1,13 +1,5 @@
-[![Deployed on Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
 
-
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
-
-![Test pass](https://github.com/jcharles921/jcharles921-My_Brand_Charles_BACKEND/actions/workflows/node.js.yml/badge.svg)
-
-[![Coverage Status](https://coveralls.io/repos/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND/badge.svg?branch=circleci-project-setup)](https://coveralls.io/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND?branch=circleci-project-setup)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/11426be371884ef60a2d/maintainability)](https://codeclimate.com/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND/maintainability)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs) ![Test pass](https://github.com/jcharles921/jcharles921-My_Brand_Charles_BACKEND/actions/workflows/node.js.yml/badge.svg)[![Coverage Status](https://coveralls.io/repos/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND/badge.svg?branch=circleci-project-setup)](https://coveralls.io/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND?branch=circleci-project-setup)[![Maintainability](https://api.codeclimate.com/v1/badges/11426be371884ef60a2d/maintainability)](https://codeclimate.com/github/jcharles921/jcharles921-My_Brand_Charles_BACKEND/maintainability)
 # jcharles921-My_Brand_Charles_BACKEND
 #### Cloning the Project
 
